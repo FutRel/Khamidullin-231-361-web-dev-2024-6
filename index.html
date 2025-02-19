@@ -53,6 +53,7 @@
                 document.getElementById('pluralizeResult').innerText = "Ошибка: введите неотрицательное число";
                 return;
             }
+
             let word;
             if (n % 10 === 1 && n % 100 !== 11) {
                 word = "запись";
@@ -61,7 +62,10 @@
             } else {
                 word = "записей";
             }
-            document.getElementById('pluralizeResult').innerText = `Результат: В результате выполнения запроса было найдено ${n} ${word}.`;
+
+            let verbForm = (n === 1) ? "была найдена" : "были найдены";
+
+            document.getElementById('pluralizeResult').innerText = `Результат: В результате выполнения запроса ${verbForm} ${n} ${word}.`;
         }
 
         function fibb() {
