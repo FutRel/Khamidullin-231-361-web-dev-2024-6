@@ -63,7 +63,7 @@
                 word = "записей";
             }
 
-            let verbForm = (n === 1) ? "была найдена" : "были найдены";
+            let verbForm = (n % 10 === 1 && n % 100 !== 11) ? "была найдена" : "были найдены";
 
             document.getElementById('pluralizeResult').innerText = `Результат: В результате выполнения запроса ${verbForm} ${n} ${word}.`;
         }
